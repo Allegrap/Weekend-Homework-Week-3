@@ -56,6 +56,5 @@ ticket1.save()
 
 
 
-
 binding.pry
 nil
