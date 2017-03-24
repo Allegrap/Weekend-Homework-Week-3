@@ -14,11 +14,13 @@ film1 = Film.new({
   'title' => 'sing street',
   'price' => 15
   })
+film1.save()
 
 ticket1 = Ticket.new({
   'customer_id' => customer1.id,
   'film_id' => film1.id
   })
+ticket1.save()
 
 
 
