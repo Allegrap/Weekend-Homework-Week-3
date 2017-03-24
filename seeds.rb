@@ -1,6 +1,6 @@
 require('pry')
 require_relative('models/customer')
-require_relative('models/films')
+require_relative('models/film')
 require_relative('models/ticket')
 
 
@@ -8,6 +8,7 @@ customer1 = Customer.new({
   'name' => 'Allegra',
   'funds' => 20
   })
+customer1.save()
 
 film1 = Film.new({
   'title' => 'sing street',

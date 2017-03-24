@@ -2,6 +2,8 @@ require_relative('../db/sql_runner')
 
 class Ticket
 
+  attr_accessor :customer_id, :film_id
+
   def initialize(options)
     @id = options['id'].to_i
     @customer_id = options['customer_id'].to_i
