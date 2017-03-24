@@ -2,7 +2,8 @@ require_relative('../db/sql_runner')
 
 class Customer
 
-  attr_reader :id, :name, :funds
+  attr_reader :id, :funds
+  attr_accessor :name
 
   def initialize(options)
     @id = options['id'].to_i
@@ -18,6 +19,11 @@ class Customer
     RETURNING *"
     customer = SqlRunner.run(sql).first()
     @id = customer['id'].to_i
+  end
+
+  def films()
+    sql = "SELECT films.* FROM films INNER JOIN tickets ON tickets.film_id = films.id WHERE tickets.customer_id = #{@id}"
+    return Film.map_items(sql)
   end
 
   def self.all()
